@@ -4,7 +4,11 @@ namespace myslam {
 
 Camera::Camera() {
 }
+    
+//T_c_w  w to c
 
+// R t  =  T_w_c
+// pw = R * pc + t
 Vec3 Camera::world2camera(const Vec3 &p_w, const SE3 &T_c_w) {
     return pose_ * T_c_w * p_w;
 }
